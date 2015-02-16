@@ -145,7 +145,7 @@ class Robot:
 			if len(params) == 3:
 				self.place(params[0],params[1],params[2])
 			else:
-				self.error(self.LEVEL_WARNING,"04","Invalid number of parameters passed by PLACE command, 3 expected")
+				self.error(self.LEVEL_WARNING,"04","Invalid number of parameters passed by PLACE command, 3 expected, the command was ignored")
 		elif keyCommand == self.MOVE_CDM:
 			if self.checkPlace(keyCommand):
 				self.move()
@@ -156,7 +156,7 @@ class Robot:
 			if self.checkPlace(keyCommand):
 				self.report()
 		else:
-			self.error(self.LEVEL_WARNING,"02","Invalid command '"+keyCommand+"'")
+			self.error(self.LEVEL_WARNING,"02","Invalid command '"+keyCommand+"', The command was ignored")
 	
 	def error(self,level,code,description):
 		if self.lineNo is not None :
