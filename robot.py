@@ -1,7 +1,6 @@
 ## Sergio Roman Iturbe
 ## Feb 15, 2015
 
-import pygame
 import sys
 import os.path
 import re
@@ -20,24 +19,24 @@ class Robot:
 	ORIENTATION_W = "WEST"
 	VALIDORIENTATIONS = [ORIENTATION_N,ORIENTATION_E,ORIENTATION_S,ORIENTATION_W]
 	
-	# Error message type
+	# Error message types
 	LEVEL_INFO    = ["_INFO__",1]
 	LEVEL_WARNING = ["WARNING",2]
 	LEVEL_ERROR   = ["_ERROR_",3]
 	
-	# Error Level
+	# Error Levels
 	SHOW_ALL      = 3
 	SHOW_WARNINGS = 2
 	SHOW_INFO     = 1
 	NO_SHOW		  = 0
 	
 	# Attributes
-	isPlaced    = False
-	orientation = None
-	debugLevel  = None
-	position    = {"x":None,"y":None}
-	tableDimen  = {"w":5,"h":5} 				# Width,Height
-	lineNo		= None
+	isPlaced    = False							# Indicates if the robot is already placed
+	orientation = None							# Current orientation robot
+	debugLevel  = None							# Debug level
+	position    = {"x":None,"y":None}			# Curent position in a WxH table grid
+	tableDimen  = {"w":5,"h":5} 				# Table dimentions Width,Height
+	lineNo		= None							# Line number in the file
 	
 	def __init__(self,debugLevel = 0):
 		self.debugLevel = debugLevel
